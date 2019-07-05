@@ -1,4 +1,4 @@
-# stocks
+# Haskell iexcloud client
 
 [![Build Status](https://travis-ci.org/dabcoder/stocks.svg?branch=master)](https://travis-ci.org/dabcoder/stocks)
 
