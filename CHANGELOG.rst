@@ -1,8 +1,8 @@
-==========
-Change Log
-==========
+=======================
+Change Log for iexcloud
+=======================
 
-`0.2.0.1`_ (unreleased)
+`0.0.0.1`_ (2019-07-07)
 -------------------------
 
 * Handle IO exceptions. Previously this library would crash whenever
@@ -14,6 +14,10 @@ Change Log
 * Added new functionality:
   getChart5y, getChart2y, getChart1y, getChart6m, getChart3m, getChart1m
 
+
+=====================
+Change Log for stocks
+=====================
 
 `0.2.0.0`_ (2018-05-30)
 ---------------------
