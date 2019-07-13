@@ -60,3 +60,12 @@ If you redistribute our API data:
 
 * Cite IEX using the following text and link: “Data provided for free by [IEX](https://iextrading.com/developer).”
 * Provide a link to https://iextrading.com/api-exhibit-a in your terms of service.
+
+# Before uploading to hackage
+
+* Make sure that all dependencies in 'iexcloud.cabal' are version bound. Also:
+
+1. Hackage is intended to be a permanent record.  Therefore uploads cannot be changed or removed.
+2. Only upload things that work, are useful to other people, and that you intend to maintain.
+3. Use `cabal gen-bounds` to put PVP-compliant version bounds (lower AND upper) on ALL your unique dependencies so your package will still be buildable years down the road.  One important thing to note is that you only need to include version bounds once.  For example, if you depend on the same package in your library and your test suite, you only need to put the version bounds for that dependency in one place.  This keeps the dependency bounds information DRY.
+4. Package candidates CAN be changed, so use them to test things out and get everything right before you publish permanently to the main index.
