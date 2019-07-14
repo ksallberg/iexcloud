@@ -497,9 +497,7 @@ getHistoricalStats = undefined
 --     return $ decode obj
 
 getNonJSONData :: String -> IO (Either SomeException L8.ByteString)
-getNonJSONData query = do
-  putStrLn query
-  try $ simpleHttp query
+getNonJSONData query = try $ simpleHttp query
 
 -- | Functions to work with the sandbox
 --
