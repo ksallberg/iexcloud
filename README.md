@@ -46,8 +46,17 @@ Please see the HUnit test for a complete example
 of all API calls.
 
 ## How to run test suite
+
+Build the project to use the IEX cloud debug sandbox URL.
+
 ```
-stack test
+DSANDBOX=1 stack build
+```
+
+Then:
+
+```
+DSANDBOX=1 stack test
 ```
 
 ## Contribute

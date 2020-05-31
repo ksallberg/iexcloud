@@ -1,6 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE CPP #-}
 
 module Net.Stocks
        (
@@ -163,7 +164,11 @@ instance ToJSON Batch
 instance FromJSON Batch
 
 baseURL :: String
+#ifdef DSANDBOX
+baseURL = sandboxURL
+#else
 baseURL = "https://cloud.iexapis.com/stable/stock/"
+#endif
 
 sandboxURL :: String
 sandboxURL = "https://sandbox.iexapis.com/stable/stock/"

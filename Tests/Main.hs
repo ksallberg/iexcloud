@@ -1,5 +1,6 @@
 module Main where
 
+import Data.Maybe
 import Net.IEX.Previous
 import Test.HUnit
 import Net.Stocks
@@ -62,7 +63,8 @@ testNewsItem = TestCase (do result <- getNewsItem "aapl"
 testOHLC = TestCase (do result <- getOHLC "aapl"
                         assertBool "desc" (result /= Nothing))
 testPeers = TestCase
-  (do (Just result) <- getPeers "aapl"
+  (do result <- getPeers "aapl"
+      -- let result = fromJust resultx
       assertEqual "get the correct peers for AAPL" result
         (L8.pack "[\"MSFT\",\"NOK\",\"IBM\",\"HPQ\",\"GOOGL\",\"BB\",\"XLK\"]"))
 testPrevious = TestCase (do result <- getPrevious "aapl"
